@@ -82,9 +82,14 @@ WSGI_APPLICATION = 'serverleaderbroadpostgre.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default='sqlite:///' + os.path.join('db.sqlite3')
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'serverleaderbroadpostgre',
+        'USER': 'postgres',
+        'PASSWORD': '9UuTOZdRI6S391L',
+        'HOST': '137.66.10.99',
+        'PORT': '5432',
+    }
 }
 
 
@@ -129,3 +134,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
