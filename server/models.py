@@ -5,7 +5,6 @@ class UserInfo(models.Model):
     username = models.CharField(max_length=255, unique=True)
     password = models.CharField(max_length=255)
     email = models.EmailField(unique=True)
-    # image = models.ImageField(upload_to='user_images/', blank=True, null=True)
     image = CloudinaryField('image', blank=True, null=True)  # Sử dụng CloudinaryField
     date = models.DateTimeField(auto_now_add=True)
     courses = models.TextField(blank=True, null=True)
@@ -14,3 +13,14 @@ class UserInfo(models.Model):
 
     def __str__(self):
         return self.username
+    
+class Course(models.Model):
+    course_name = models.CharField(max_length=255)
+    description = models.TextField()
+    image = CloudinaryField('image', blank=True, null=True)  # Trường hình ảnh sử dụng Cloudinary
+    number_of_lessons = models.PositiveIntegerField()
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    duration = models.DurationField()
+
+    def __str__(self):
+        return self.course_name

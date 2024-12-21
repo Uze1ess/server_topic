@@ -1,4 +1,4 @@
-from .models import UserInfo
+from .models import UserInfo, Course
 from django.core.exceptions import ValidationError
 from cloudinary.uploader import upload
 
