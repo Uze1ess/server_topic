@@ -4,6 +4,7 @@ from .controller import get_users_data, add_user_data
 from django.views.decorators.csrf import csrf_exempt
 import json
 from django.core.exceptions import ValidationError
+from .models import Course
 
 # Create your views here.
 def home(request):

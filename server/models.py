@@ -14,6 +14,12 @@ class UserInfo(models.Model):
     def __str__(self):
         return self.username
     
+# class Category(models.Model):
+#     name = models.CharField(max_length=100)
+
+#     def __str__(self):
+#         return self.name
+    
 class Course(models.Model):
     course_name = models.CharField(max_length=255)
     description = models.TextField()
@@ -21,6 +27,7 @@ class Course(models.Model):
     number_of_lessons = models.PositiveIntegerField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     duration = models.DurationField()
-
+    # categories = models.ManyToManyField(Category, related_name='courses')
+    
     def __str__(self):
         return self.course_name
