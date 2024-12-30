@@ -17,6 +17,7 @@ Bước 1: Set up môi trường ảo
     DATABASE_URL=postgresql://137.66.10.99:5432/serverleaderbroadpostgre
 
 Bước 2: Thiết lập database
+
     - TH1: Nếu thử trên local (mà không muốn sử dụng database đã hosting)
         Bỏ comment đoạn sau trong code 
 
@@ -37,5 +38,5 @@ Bước 2: Thiết lập database
 
     - TH2: Dùng trên local (nhưng muốn can thiệp vào database host)
         Dữ nguyên. Nhưng có thay đổi gì ở model hãy nhớ makegration
-        
+
     - TH3: Hosting
