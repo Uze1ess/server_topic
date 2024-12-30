@@ -30,3 +30,12 @@ fly.toml
 tmp
 .venv
 .env
+
+Để test trên local. Hãy bỏ comment đoạn sau ở setting
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / "db.sqlite3",  # Tên tệp cơ sở dữ liệu
+#     }
+# }
