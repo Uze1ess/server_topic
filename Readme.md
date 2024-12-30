@@ -31,7 +31,7 @@ tmp
 .venv
 .env
 
-Để test trên local. Hãy bỏ comment đoạn sau ở setting
+Để test trên local. Hãy bỏ comment đoạn sau ở setting. Sẽ không cần host hay set dockerignore. Vì chỉ có người host mới có file đấy
 
 # DATABASES = {
 #     'default': {
