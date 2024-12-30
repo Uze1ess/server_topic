@@ -10,7 +10,6 @@ File .gitignore
 .dmypy.json
 dmypy.json
 
-# Pyre type checker
 .pyre/
 tmp
 .env
