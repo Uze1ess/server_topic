@@ -37,7 +37,7 @@ def post_user_data(request):
             password = body.get("password")
 
             # Gọi controller để thêm người dùng
-            user_info = add_user_data(username, email, password, image)
+            user_info = add_user_data(username, email, password)
 
             return JsonResponse({
                 "message": "Tạo người dùng thành công!",

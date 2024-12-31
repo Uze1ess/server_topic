@@ -7,7 +7,7 @@ def get_users_data():
 
     return users
 
-def add_user_data(username, email, password, image):
+def add_user_data(username, email, password):
     if not username or not email or not password:
         raise ValidationError("Thiếu thông tin bắt buộc!")
 
@@ -17,21 +17,12 @@ def add_user_data(username, email, password, image):
     if UserInfo.objects.filter(email=email).exists():
         raise ValidationError("Email đã tồn tại!")
 
-    # Xử lý upload ảnh (nếu có)
-    image_url = None
-    if image:
-        try:
-            upload_result = upload(image)
-            image_url = upload_result['url']
-        except Exception as e:
-            raise ValueError(f"Lỗi khi tải ảnh lên Cloudinary: {str(e)}")
-
     # Tạo bản ghi người dùng
     return UserInfo.objects.create(
         username=username,
         email=email,
         password=password,
-        image=image_url,
+        image=None,
         courses=None,
         target=None,
         study=None
