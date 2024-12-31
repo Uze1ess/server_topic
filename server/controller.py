@@ -7,8 +7,8 @@ def get_users_data():
 
     return users
 
-def add_user_data(username, password, email, image=None, courses="", target="", study=""):
-    if not username or not password or not email:
+def add_user_data(username, email, password, image):
+    if not username or not email or not password:
         raise ValidationError("Thiếu thông tin bắt buộc!")
 
     if UserInfo.objects.filter(username=username).exists():
@@ -29,10 +29,10 @@ def add_user_data(username, password, email, image=None, courses="", target="", 
     # Tạo bản ghi người dùng
     return UserInfo.objects.create(
         username=username,
-        password=password,
         email=email,
+        password=password,
         image=image_url,
-        courses=courses,
-        target=target,
-        study=study
+        courses=None,
+        target=None,
+        study=None
     )

@@ -23,18 +23,21 @@ def fetch_users_data(request):
 def post_user_data(request):
     if request.method == "POST":
         try:
-            body = request.POST  # Lấy dữ liệu từ form
-            image = request.FILES.get("image")  # Lấy file ảnh từ request
+            body = json.loads(request.body)  # Lấy dữ liệu từ form
+            # Lấy file ảnh từ request
+            print(body)
+            print(body.get("username"))
+            print(body.get("email"))
+            print(body.get("password"))
+
+            print(body.get('{"username":"Trang","email":"abc@gmail.com","password":"12345"}'))
 
             username = body.get("username")
-            password = body.get("password")
             email = body.get("email")
-            courses = body.get("courses", "")
-            target = body.get("target", "")
-            study = body.get("study", "")
+            password = body.get("password")
 
             # Gọi controller để thêm người dùng
-            user_info = add_user_data(username, password, email, image, courses, target, study)
+            user_info = add_user_data(username, email, password, image)
 
             return JsonResponse({
                 "message": "Tạo người dùng thành công!",
