@@ -3,6 +3,7 @@
 dmypy.json
 
 # Pyre type checker
+.env
 .pyre/
 tmp
 *.sqlite3
