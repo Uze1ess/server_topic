@@ -25,12 +25,6 @@ def post_user_data(request):
         try:
             body = json.loads(request.body)  # Lấy dữ liệu từ form
             # Lấy file ảnh từ request
-            print(body)
-            print(body.get("username"))
-            print(body.get("email"))
-            print(body.get("password"))
-
-            print(body.get('{"username":"Trang","email":"abc@gmail.com","password":"12345"}'))
 
             username = body.get("username")
             email = body.get("email")
