@@ -84,23 +84,23 @@ WSGI_APPLICATION = 'serverleaderbroadpostgre.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'serverleaderbroadpostgre',
-#         'USER': 'postgres',
-#         'PASSWORD': '9UuTOZdRI6S391L',
-#         'HOST': '137.66.10.99',
-#         'PORT': '5432',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / "db.sqlite3",  # Tên tệp cơ sở dữ liệu
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'serverleaderbroadpostgre',
+        'USER': 'postgres',
+        'PASSWORD': '9UuTOZdRI6S391L',
+        'HOST': '137.66.10.99',
+        'PORT': '5432',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / "db.sqlite3",  # Tên tệp cơ sở dữ liệu
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
