@@ -11,5 +11,4 @@ Dockerfile
 fly.toml
 tmp
 .dockerignore
-migrations
 .venv
